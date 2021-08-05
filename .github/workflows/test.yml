@@ -25,6 +25,13 @@ jobs:
           mkdir -p $GITHUB_WORKSPACE/dist/test
           echo WOO > $GITHUB_WORKSPACE/woo
           echo NOO > $GITHUB_WORKSPACE/dist/noo
+      - name: DeployREMOTEURE
+        uses: easingthemes/ssh-deploy@main
+        env:
+            SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_SERVER_PRIVATE_KEY }}
+            REMOTE_HOST: ${{ secrets.DEPLOY_SERVER_HOST }}
+            REMOTE_USER: ${{ secrets.DEPLOY_SERVER_USER }}
+            TARGET: /home/${{ secrets.DEPLOY_SERVER_USER }}
 
   deploy:
     runs-on: ubuntu-latest
