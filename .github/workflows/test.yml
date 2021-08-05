@@ -31,7 +31,7 @@ jobs:
             SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_SERVER_PRIVATE_KEY }}
             REMOTE_HOST: ${{ secrets.DEPLOY_SERVER_HOST }}
             REMOTE_USER: ${{ secrets.DEPLOY_SERVER_USER }}
-            TARGET: /home/${{ secrets.DEPLOY_SERVER_USER }}
+            TARGET: /home/${{ secrets.DEPLOY_SERVER_USER }}/deploy_test
 
   deploy:
     runs-on: ubuntu-latest
