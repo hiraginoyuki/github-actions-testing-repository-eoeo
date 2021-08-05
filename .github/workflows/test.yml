@@ -1,0 +1,34 @@
+name: SSH into vps and eoeo
+
+on:
+  push:
+    branches: [ main ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Run a one-line script
+        run: echo Hello, world!
+
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
+      - name: create soomethinggg
+        run: |
+          mkdir -p $GITHUB_WORKSPACE/dist/test
+          echo WOO > $GITHUB_WORKSPACE/woo
+          echo NOO > $GITHUB_WORKSPACE/dist/noo
+
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: How does this work?
+        run: echo sfwqaiojfhgwjtf98wmj
